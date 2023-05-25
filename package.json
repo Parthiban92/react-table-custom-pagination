@@ -6,8 +6,13 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.14",
+    "@tanstack/react-table": "^8.9.1",
+    "classnames": "^2.3.2",
+    "graphql": "^16.6.0",
     "next": "latest",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "styled-components": "^6.0.0-rc.2"
   }
 }
