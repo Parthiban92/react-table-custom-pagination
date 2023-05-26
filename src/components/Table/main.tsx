@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import StyledTable, { StyledDiv } from "./style";
+import StyledTable, { StyledDiv, StyledSelect } from "./style";
 
 import {
   Column,
@@ -105,7 +105,7 @@ function Table({
   // onPaginationChange?: OnChangeFn<PaginationState>;
   // autoResetPageIndex?: boolean;
   // getPaginationRowModel?:
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(table.getState().pagination.pageIndex+1);
 let PageSize = 10;
   const currentTableData = React.useMemo(() => {
     const firstPageIndex = (currentPage - 1) * PageSize;
@@ -162,7 +162,7 @@ let PageSize = 10;
       </StyledTable>
 
       <StyledDiv>
-        <button
+        {/* <button
           className="border rounded p-1"
           onClick={() => table.setPageIndex(0)}
           disabled={!table.getCanPreviousPage()}
@@ -209,8 +209,16 @@ let PageSize = 10;
             }}
             className="border p-1 rounded w-16"
           />
-        </span>
-        <select
+        </span> */}
+        <Pagination
+        className="pagination-bar"
+        currentPage={currentPage}
+        totalCount={100}
+        pageSize={table.getState().pagination.pageSize}
+        onPageChange={page =>{ setCurrentPage(page);  onPagination(table.getState().pagination.pageSize, page); }}
+       numberOfRecords={table.getState().pagination.pageSize}
+      />
+        <StyledSelect
           value={table.getState().pagination.pageSize}
           onChange={(e) => {
             console.log('test', Number(e.target.value))
@@ -224,15 +232,10 @@ let PageSize = 10;
               Show {pageSize}
             </option>
           ))}
-        </select>
+        </StyledSelect>
       </StyledDiv>
-      <Pagination
-        className="pagination-bar"
-        currentPage={table.getState().pagination.pageSize}
-        totalCount={data.length}
-        pageSize={100}
-        onPageChange={page => setCurrentPage(page)}
-      />
+
+      
      
     </div>
   );

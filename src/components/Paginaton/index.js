@@ -36,9 +36,7 @@ const Pagination = props => {
   let lastPage = paginationRange[paginationRange.length - 1];
   return (
     <StyledPagination>
-    <ul
-      className='pagination-container '
-    >
+  
       <li
         className={classnames('pagination-item', {
           disabled: currentPage === 1
@@ -71,7 +69,7 @@ const Pagination = props => {
       >
         <div className="arrow right" />
       </li>
-    </ul>
+ 
     </StyledPagination>
   );
 };

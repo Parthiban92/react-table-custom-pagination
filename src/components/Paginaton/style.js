@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const StyledPagination = styled.div`
-.pagination-container {
+const StyledPagination = styled.ul`
+
     display: flex;
     list-style-type: none;
   
@@ -69,7 +69,7 @@ const StyledPagination = styled.div`
         }
       }
     }
-  }
+  
 `;
 
 export default StyledPagination;
