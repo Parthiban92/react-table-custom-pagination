@@ -7,14 +7,15 @@ const StyledTable = styled.table`
     border-bottom: 1px solid lightgray;
   }
   td {
-    padding: 4px;
+    padding: 6px 7px;
     border: 1px solid lightgray;
   }
 
   th {
     border-bottom: 1px solid lightgray;
     border-right: 1px solid lightgray;
-    padding: 4px 4px;
+    padding: 6px 7px;
+    background-color: beige;
   }
 
   tfoot {

@@ -28,6 +28,11 @@ const App=() =>{
   }
 
 
+  const onSortingChange=(sort)=>{
+    console.log('sort', sort)
+  }
+
+
   const gridData = React.useMemo(() => tableData, [tableData]);
 
   const columns = React.useMemo(
@@ -53,6 +58,7 @@ const App=() =>{
       loading={loading}
       pageCount={1000}
       onPagination={onPagination}
+      onSortingChange={onSortingChange}
     />
   );
 }
